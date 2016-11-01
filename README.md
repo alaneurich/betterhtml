@@ -1,6 +1,6 @@
 # betterhtml
-This is basically a fork of the `Html` Class in Android with the toHtml Conversion
-stripped away and an easily customizable fromHtml Conversion.
+This is basically a fork of the [`Html`](https://github.com/android/platform_frameworks_base/blob/master/core/java/android/text/Html.java)
+Class in Android with the toHtml Conversion stripped away and an easily customizable fromHtml Conversion.
 
 # Include via Gradle
 
@@ -23,8 +23,8 @@ dependencies {
 ```
 
 # Usage
-In contrast to the original `Html` Class we're not using a single Function for
-conversion but a Builder Class instead.
+In contrast to the original [`Html`](https://github.com/android/platform_frameworks_base/blob/master/core/java/android/text/Html.java)
+Class we're not using a single Function for conversion but a Builder Class instead.
 
 ##Simple Usage
 If you want to use BetterHtml without customizing anything all you have to do
@@ -43,8 +43,9 @@ sampleText.setText(convertedString);
 ##BetterHtml.Builder
 *Built-In Customizations*
 
-The `BetterHtml.Builder` already allow for some customizations not
-found in the original `Html` Class.
+The [`BetterHtml.Builder`](https://github.com/budsmile/betterhtml/blob/master/betterhtml/src/main/java/com/candidapps/betterhtml/BetterHtml.java)
+already allows for some customizations not found in the original [`Html`](https://github.com/android/platform_frameworks_base/blob/master/core/java/android/text/Html.java)
+Class.
 
 ###Header Sizes
 To change all Header Sizes either use
@@ -109,30 +110,32 @@ will be converted to
 
 ###Using DefaultSpanProvider
 
-By default BetterHtml uses the `BetterSpanProvider` Class. This allows for
-some of the Customization Options and will allow further customizations
+By default BetterHtml uses the [`BetterSpanProvider`](https://github.com/budsmile/betterhtml/blob/master/betterhtml/src/main/java/com/candidapps/betterhtml/provider/BetterSpanProvider.java)
+Class. This allows for some of the Customization Options and will allow further customizations
 to the default parsing in the future.
 
-`BetterSpanProvider` extends from `DefaultSpanProvider` which will produce exactly
-the same output you'd expect from the fromHtml function in the original
+[`BetterSpanProvider`](https://github.com/budsmile/betterhtml/blob/master/betterhtml/src/main/java/com/candidapps/betterhtml/provider/BetterSpanProvider.java)
+extends from [`DefaultSpanProvider`](https://github.com/budsmile/betterhtml/blob/master/betterhtml/src/main/java/com/candidapps/betterhtml/provider/DefaultSpanProvider.java)
+which will produce exactly the same output you'd expect from the fromHtml function in the original
 Html Class. If you'd prefer the default Output just call the following
-on your `BetterHtml.Builder`:
+on your [`BetterHtml.Builder`](https://github.com/budsmile/betterhtml/blob/master/betterhtml/src/main/java/com/candidapps/betterhtml/BetterHtml.java):
 
 ```java
 builder.setSpanProvider(new DefaultSpanProvider());
 ```
 
 That's it! :) BetterHtml will now produce default Output. **Note that this will ignore
-the settings set on the `BetterHtml.Builder`.**
+the settings set on the [`BetterHtml.Builder`](https://github.com/budsmile/betterhtml/blob/master/betterhtml/src/main/java/com/candidapps/betterhtml/BetterHtml.java).**
 
 ###Overriding Methods
 
-Instead of just choosing between `DefaultSpanProvider` and `BetterSpanProvider`
+Instead of just choosing between [`DefaultSpanProvider`](https://github.com/budsmile/betterhtml/blob/master/betterhtml/src/main/java/com/candidapps/betterhtml/provider/DefaultSpanProvider.java)
+and [`BetterSpanProvider`](https://github.com/budsmile/betterhtml/blob/master/betterhtml/src/main/java/com/candidapps/betterhtml/provider/BetterSpanProvider.java)
 it's also possible to extend these classes and override some of their methods
 to get an unique Look for some Tags.
 
-It's also possible to implement the `BaseSpanProvider` Interface but then you'll
-have to provide all Creation Methods yourself.
+It's also possible to implement the [`BaseSpanProvider`](https://github.com/budsmile/betterhtml/blob/master/betterhtml/src/main/java/com/candidapps/betterhtml/provider/BaseSpanProvider.java)
+Interface but then you'll have to provide all Creation Methods yourself.
 
 
 License
